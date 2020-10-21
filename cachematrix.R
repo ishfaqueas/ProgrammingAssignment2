@@ -3,7 +3,7 @@
 
 ## Write a short comment describing this function
 ## Overall 'makeCacheMatrix' is a new function which contain fouur other functions called 'set, get, setsolve, getsolve' 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix(sample(1:50,9),3,3)) {
   s<- NULL
   set <- function(y){
       x<<-y
@@ -18,7 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
-
+## Tis function called "cacheSolv" will give inverse of above matrix if it is present in cache
+## otherwise it will calculate the inverse of matrix and will give results
 cacheSolve <- function(x, ...) {
   s <- x$getsolve()
   if(!is.null(s)) {
